@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Date&Time</title>
+  </head>
+  <style>
+      body{
+          padding:5px;
+          margin:5px;
+      }
+      #color{
+          padding-top:10px;
+          padding:10px;
+          margin: 5px;
+          text-align: center;
+          font-size:50px;
+      }
+      #size{
+          height: 300px;
+      }
+      #final{
+          font-size:50px;
+          text-align: center;
+
+      }
+      #fin{
+        font-size:50px;
+        text-align: center;
+      }
+      #f{
+        font-size:50px;
+        text-align: center;  
+      }
+  </style>
+  <body>
+      <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" alt="" width="80" height="74" class="d-inline-block align-top" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+          </svg>
+        
+        <b id="color">Date&Time</b>
+      </a>
+    </div>
+  </nav>
+  <p></p>
+  <div id="size" class="alert alert-warning border border-danger" role="alert">
+      <p></p>
+      <p></p>
+      <p id="final" ></p>
+      <p id="fin"></p>
+      <p id ="f" >_____</p>
+  </div>
+
+   <script>
+       start=()=>{
+       let d=new Date()
+       dte=d.getDate()
+       hr=d.getHours()
+       sec=d.getSeconds()
+       min=d.getMinutes()
+       yr=d.getFullYear()
+       day=d.getDay()
+       month=d.getMonth()
+       var k=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+       var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+       document.getElementById('final').innerHTML=dte + " " +  months[month] + " " + yr +   "," + k[day] 
+       document.getElementById("fin").innerHTML= "Time " + ": " + hr + ":" + min + ":" + sec 
+       }
+       clr=setInterval(start,1000)
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  
+  </body>
+</html>
